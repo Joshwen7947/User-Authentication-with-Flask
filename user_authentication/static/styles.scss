@@ -1,0 +1,53 @@
+// index.scss
+
+h1 {
+	text-align: center;
+	justify-content: center;
+}
+
+.container {
+	max-width: 800px;
+	margin: 50px auto;
+	text-align: center;
+
+	h1 {
+		font-size: 36px;
+		color: #333;
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-size: 18px;
+		color: #666;
+		margin-bottom: 20px;
+	}
+
+	.login-btn {
+		padding: 10px 20px;
+		background-color: #007bff;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+
+		&:hover {
+			background-color: #0056b3;
+		}
+	}
+	.logout-btn {
+		padding: 10px 20px;
+		background-color: #007bff;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+
+		&:hover {
+			background-color: #0056b3;
+		}
+	}
+}
