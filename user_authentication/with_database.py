@@ -3,7 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Change this to a random secret key
+app.secret_key = 'your_secret_key'  
 
 # Configuring SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
@@ -41,6 +41,19 @@ def home():
     if 'username' in session:
         return redirect(url_for('dashboard'))
     return render_template('index.html')
+
+@app.route('/settings')
+def settings():
+    if 'username' not in session:
+        return redirect(url_for('home'))
+    else:
+
+        user = User.query.filter_by(username=session['username']).first()
+
+        return render_template(
+            'settings.html',
+            username=user.username
+        )
 
 @app.route('/login', methods=['POST'])
 def login():
